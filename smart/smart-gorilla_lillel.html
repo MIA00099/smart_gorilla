@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Gorilla - African Restaurant in Lille</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="min-h-screen bg-[#3f6200] text-white">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#3f6200]/90 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+        <button
+          class="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold md:hidden"
+          onclick="scrollToId('menu')"
+        >
+          Menu
+        </button>
+        <div class="text-sm font-black uppercase tracking-[0.35em] text-white/90 md:text-base">
+          Smart Gorilla
+        </div>
+        <nav class="hidden items-center gap-8 text-sm text-white/80 md:flex">
+          <button onclick="scrollToId('menu')" class="hover:text-white">Menu</button>
+          <button onclick="scrollToId('about')" class="hover:text-white">Concept</button>
+          <button onclick="scrollToId('events')" class="hover:text-white">Events</button>
+          <button onclick="scrollToId('visit')" class="hover:text-white">Contact</button>
+        </nav>
+        <button
+          onclick="showReservationModal()"
+          class="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-black"
+        >
+          Book
+        </button>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl space-y-12 px-5 py-6 pb-28 md:space-y-16 md:px-8 md:py-10 md:pb-12">
+      <section class="grid items-center gap-8 overflow-hidden rounded-[2rem] bg-gradient-to-br from-black/25 via-[#597f06]/65 to-[#1d2900]/90 p-6 shadow-2xl shadow-black/20 md:grid-cols-2 md:p-10">
+        <div>
+          <div class="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/90">
+            African restaurant in Lille
+          </div>
+          <h1 class="mt-4 text-5xl font-black leading-[0.95] md:text-7xl">
+            Africa on your plate.
+          </h1>
+          <p class="mt-4 max-w-xl text-base leading-7 text-white/80 md:text-lg">
+            Africa on your plate, adventure in every bite. Book a table online, order delivery, or plan your private event in the heart of Lille.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button
+              onclick="showReservationModal()"
+              class="rounded-full bg-white px-6 py-3 font-bold text-black"
+            >
+              Book a Table
+            </button>
+            <button
+              onclick="scrollToId('menu')"
+              class="rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white"
+            >
+              View Menu
+            </button>
+          </div>
+          <div class="mt-8 grid grid-cols-2 gap-3 md:max-w-lg">
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="text-sm font-bold">Delivery</div>
+              <div class="mt-1 text-sm text-white/75">Deliveroo partner</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="text-sm font-bold">Events</div>
+              <div class="mt-1 text-sm text-white/75">Quote & Booking</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="text-sm font-bold">Music</div>
+              <div class="mt-1 text-sm text-white/75">Live DJ • Live Music • Karaoke</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 backdrop-blur">
+              <div class="text-sm font-bold">Payments</div>
+              <div class="mt-1 text-sm text-white/75">Visa • Apple Pay • Cash</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <img
+            src="smart4.webp"
+            alt="Signature African dish"
+            class="h-[320px] w-full rounded-[2rem] object-cover shadow-2xl shadow-black/30 md:h-[520px]"
+          />
+          <div class="absolute bottom-4 left-4 rounded-3xl bg-[#f5f1e7] px-4 py-3 text-black shadow-xl">
+            <div class="text-xs font-semibold uppercase tracking-[0.18em] text-black/50">Tonight's favorite</div>
+            <div class="mt-1 text-lg font-black">Signature Grill Bowl</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <button
+          onclick="showReservationModal()"
+          class="rounded-[1.6rem] bg-[#f5f1e7] p-4 text-left text-black shadow-xl shadow-black/15 transition hover:-translate-y-1"
+        >
+          <div class="text-base font-black leading-tight">Book Table</div>
+          <div class="mt-1 text-sm text-black/60">Reserve in seconds</div>
+        </button>
+        <button
+          onclick="window.open('https://deliveroo.fr/', '_blank')"
+          class="rounded-[1.6rem] bg-[#f5f1e7] p-4 text-left text-black shadow-xl shadow-black/15 transition hover:-translate-y-1"
+        >
+          <div class="text-base font-black leading-tight">Order Delivery</div>
+          <div class="mt-1 text-sm text-black/60">Available on Deliveroo</div>
+        </button>
+        <button
+          onclick="showEventModal()"
+          class="rounded-[1.6rem] bg-[#f5f1e7] p-4 text-left text-black shadow-xl shadow-black/15 transition hover:-translate-y-1"
+        >
+          <div class="text-base font-black leading-tight">Private Events</div>
+          <div class="mt-1 text-sm text-black/60">Birthdays & groups</div>
+        </button>
+        <button
+          onclick="scrollToId('visit')"
+          class="rounded-[1.6rem] bg-[#f5f1e7] p-4 text-left text-black shadow-xl shadow-black/15 transition hover:-translate-y-1"
+        >
+          <div class="text-base font-black leading-tight">Visit Us</div>
+          <div class="mt-1 text-sm text-black/60">137 Rue d'Arras</div>
+        </button>
+      </section>
+
+      <section id="menu" class="space-y-6">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div class="text-sm font-semibold uppercase tracking-[0.28em] text-[#efe2b5]">Menu preview</div>
+            <h2 class="mt-2 text-4xl font-black md:text-5xl">Explore the menu</h2>
+            <p class="mt-2 max-w-2xl text-white/75">
+              Menu preview designed around the original site information, including vegetarian, halal, gluten-free, and lactose-free options.
+            </p>
+          </div>
+          <button
+            onclick="scrollToId('visit')"
+            class="rounded-full bg-white px-5 py-3 text-sm font-bold text-black"
+          >
+            Reserve after browsing
+          </button>
+        </div>
+
+        <div class="flex gap-3 overflow-x-auto pb-1" id="category-buttons">
+          <button
+            onclick="setCategory('Popular')"
+            class="category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-white text-black"
+            data-category="Popular"
+          >
+            Popular
+          </button>
+          <button
+            onclick="setCategory('Starters')"
+            class="category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-[#c6d5a0] text-black/45"
+            data-category="Starters"
+          >
+            Starters
+          </button>
+          <button
+            onclick="setCategory('Mains')"
+            class="category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-[#c6d5a0] text-black/45"
+            data-category="Mains"
+          >
+            Mains
+          </button>
+          <button
+            onclick="setCategory('Grill')"
+            class="category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-[#c6d5a0] text-black/45"
+            data-category="Grill"
+          >
+            Grill
+          </button>
+          <button
+            onclick="setCategory('Sides')"
+            class="category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-[#c6d5a0] text-black/45"
+            data-category="Sides"
+          >
+            Sides
+          </button>
+          <button
+            onclick="setCategory('Drinks')"
+            class="category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-[#c6d5a0] text-black/45"
+            data-category="Drinks"
+          >
+            Drinks
+          </button>
+        </div>
+
+        <div class="flex gap-2 overflow-x-auto pb-1" id="diet-buttons">
+          <button
+            onclick="setDiet('All')"
+            class="diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-black text-white"
+            data-diet="All"
+          >
+            All
+          </button>
+          <button
+            onclick="setDiet('Vegetarian')"
+            class="diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-white/10 text-white/80"
+            data-diet="Vegetarian"
+          >
+            Vegetarian
+          </button>
+          <button
+            onclick="setDiet('Halal')"
+            class="diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-white/10 text-white/80"
+            data-diet="Halal"
+          >
+            Halal
+          </button>
+          <button
+            onclick="setDiet('Gluten-free')"
+            class="diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-white/10 text-white/80"
+            data-diet="Gluten-free"
+          >
+            Gluten-free
+          </button>
+          <button
+            onclick="setDiet('Lactose-free')"
+            class="diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-white/10 text-white/80"
+            data-diet="Lactose-free"
+          >
+            Lactose-free
+          </button>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3" id="menu-items">
+          <!-- Menu items will be dynamically inserted here -->
+        </div>
+      </section>
+
+      <section id="about" class="grid gap-6 rounded-[2rem] bg-black/20 p-6 shadow-xl shadow-black/15 md:grid-cols-2 md:items-center md:p-8">
+        <img
+          src="smart6.webp"
+          alt="Restaurant atmosphere"
+          class="h-80 w-full rounded-[1.7rem] object-cover"
+        />
+        <div>
+          <div class="text-sm font-semibold uppercase tracking-[0.28em] text-[#efe2b5]">Our concept</div>
+          <h2 class="mt-3 text-4xl font-black md:text-5xl">Adventure in every bite.</h2>
+          <p class="mt-4 text-white/80">
+            Once upon a time, in a not-so-distant past, a greedy gorilla felt the call of adventure. He took with him his beloved pots and his precious ancestral recipes, because for our gorilla indulgence is not a sin, but an art. Thus, Smart Gorilla was born: a culinary adventure full of discoveries and surprises. Welcome to our gourmet jungle.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Wheelchair Accessible</span>
+            <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Air Cooling</span>
+            <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Live DJ</span>
+            <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Live Music</span>
+            <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Karaoke</span>
+            <span class="rounded-full bg-white/10 px-3 py-2 text-sm">Family Friendly</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="grid gap-6 overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#141414] via-[#273000] to-[#111111] p-6 shadow-2xl shadow-black/20 md:grid-cols-2 md:items-center md:p-8">
+        <div>
+          <div class="inline-flex rounded-full bg-[#c9a24d]/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-[#efe2b5]">
+            Groups & private events
+          </div>
+          <h2 class="mt-4 text-4xl font-black md:text-5xl">Celebrate at Smart Gorilla.</h2>
+          <p class="mt-4 text-white/75">
+            Looking for a unique and private venue in Lille for your birthdays, parties, cocktail parties, business meetings, and reunions? Contact the team to tell them about your project or request a personalized quote. Our space can accommodate up to 60 people in a unique and private setting.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button onclick="showEventModal()" class="rounded-full bg-white px-6 py-3 text-sm font-bold text-black">
+              Request Event Quote
+            </button>
+            <span class="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white/85">
+              Up to 60 guests
+            </span>
+          </div>
+        </div>
+        <img
+          src="smart5.webp"
+          alt="Private events"
+          class="h-80 w-full rounded-[1.7rem] object-cover"
+        />
+      </section>
+
+      <section class="rounded-[2rem] bg-white/5 p-6 shadow-xl shadow-black/10 md:p-8">
+        <div class="grid gap-8 md:grid-cols-2 md:items-center">
+          <div>
+            <div class="text-sm font-semibold uppercase tracking-[0.28em] text-[#efe2b5]">Delivery</div>
+            <h2 class="mt-3 text-4xl font-black md:text-5xl">Enjoy Smart Gorilla at home.</h2>
+            <p class="mt-4 text-white/80">
+              The original site promotes delivery through Deliveroo. This button is already wired to open Deliveroo in a new tab.
+            </p>
+            <button
+              onclick="window.open('https://deliveroo.fr/', '_blank')"
+              class="mt-6 rounded-full bg-white px-6 py-3 font-bold text-black"
+            >
+              Order on Deliveroo
+            </button>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <img src="smart5.webp" alt="Gallery 1" class="h-40 w-full rounded-[1.4rem] object-cover" />
+            <img src="smart1.webp" alt="Gallery 2" class="h-40 w-full rounded-[1.4rem] object-cover" />
+            <img src="smart2.webp" alt="Gallery 3" class="h-40 w-full rounded-[1.4rem] object-cover" />
+            <img src="smart7.webp" alt="Gallery 4" class="h-40 w-full rounded-[1.4rem] object-cover" />
+          </div>
+        </div>
+      </section>
+
+      <section id="visit" class="grid gap-6 rounded-[2rem] bg-[#f5f1e7] p-6 text-black shadow-2xl shadow-black/15 md:grid-cols-[0.9fr_1.1fr] md:p-8">
+        <div>
+          <div class="text-sm font-semibold uppercase tracking-[0.28em] text-black/55">Visit us</div>
+          <h2 class="mt-2 text-4xl font-black md:text-5xl">Smart Gorilla</h2>
+          <div class="mt-5 space-y-3 text-base text-black/75">
+            <p>📍 137 Rue d'Arras, 59000 Lille</p>
+            <p>📞 +33 7 52 03 04 07</p>
+          </div>
+          <div class="mt-6 space-y-2 text-sm text-black/70">
+            <p><span class="font-bold text-black">Mon–Thu:</span> 12:00–14:00 / 18:30–23:00</p>
+            <p><span class="font-bold text-black">Fri:</span> 12:00–14:00 / 18:30–01:45</p>
+            <p><span class="font-bold text-black">Sat:</span> 18:00–02:00</p>
+            <p><span class="font-bold text-black">Sun:</span> 18:00–00:00</p>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="tel:+33752030407" class="rounded-full bg-black px-5 py-3 text-sm font-bold text-white">
+              Call Now
+            </a>
+            <a
+              href="https://maps.google.com/?q=137+Rue+d'Arras+59000+Lille"
+              target="_blank"
+              rel="noreferrer"
+              class="rounded-full border border-black/10 px-5 py-3 text-sm font-bold text-black"
+            >
+              Get Directions
+            </a>
+          </div>
+          <div class="mt-8">
+            <div class="text-sm font-bold uppercase tracking-[0.18em] text-black/55">Payment methods</div>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">American Express</span>
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">Mastercard</span>
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">Cash</span>
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">Debit Card</span>
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">Visa</span>
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">Apple Pay</span>
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em]">Google Pay</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden rounded-[1.7rem] border border-black/10 bg-[#dfd7c5]">
+          <iframe
+            title="Smart Gorilla map"
+            src="https://www.google.com/maps?q=137%20Rue%20d'Arras%2059000%20Lille&output=embed"
+            class="h-[420px] w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <footer class="rounded-[2rem] bg-black/20 p-6 md:p-8">
+        <div class="grid gap-6 md:grid-cols-4">
+          <div>
+            <div class="text-sm font-black uppercase tracking-[0.3em]">Smart Gorilla</div>
+            <p class="mt-3 text-sm text-white/70">
+              Africa on your plate, adventure in every bite.
+            </p>
+          </div>
+          <div>
+            <div class="font-bold">Navigate</div>
+            <div class="mt-3 flex flex-col gap-2 text-sm text-white/70">
+              <button class="text-left" onclick="scrollToId('menu')">Menu</button>
+              <button class="text-left" onclick="showReservationModal()">Reservations</button>
+              <button class="text-left" onclick="showEventModal()">Private Events</button>
+              <button class="text-left" onclick="scrollToId('visit')">Contact</button>
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Info</div>
+            <div class="mt-3 flex flex-col gap-2 text-sm text-white/70">
+              <a href="#">Legal Notice</a>
+              <a href="#">Data privacy</a>
+              <a href="#">Cookies settings</a>
+            </div>
+          </div>
+          <div>
+            <div class="font-bold">Social</div>
+            <div class="mt-3 flex flex-col gap-2 text-sm text-white/70">
+              <a href="https://www.instagram.com/smart_gorilla_lille/" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="tel:+33752030407">Call Restaurant</a>
+              <button class="text-left" onclick="window.open('https://deliveroo.fr/', '_blank')">Deliveroo</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div class="fixed bottom-4 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 rounded-full bg-white px-4 py-3 text-black shadow-2xl shadow-black/20 md:hidden">
+      <div class="grid grid-cols-5 text-center text-[11px] font-medium">
+        <button class="flex flex-col items-center gap-1 py-1" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-black/10 text-base">🏠</span>
+          <span>Home</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 py-1" onclick="scrollToId('menu')">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-black/10 text-base">🍽</span>
+          <span>Menu</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 py-1" onclick="showReservationModal()">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-black/10 text-base">📅</span>
+          <span>Book</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 py-1" onclick="showEventModal()">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-black/10 text-base">🎉</span>
+          <span>Events</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 py-1" onclick="scrollToId('visit')">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-black/10 text-base">📍</span>
+          <span>Visit</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Reservation Modal -->
+    <div id="reservation-modal" class="fixed inset-0 z-[60] hidden grid place-items-center bg-black/70 px-4 py-6 backdrop-blur-sm">
+      <div class="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-[2rem] bg-[#f5f1e7] p-6 text-black shadow-2xl md:p-8">
+        <div class="mb-5 flex items-center justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-[0.28em] text-black/45">Table Booking</div>
+            <h3 class="mt-1 text-3xl font-black">Book a table online</h3>
+          </div>
+          <button
+            onclick="closeModals()"
+            class="rounded-full bg-black/10 px-4 py-2 text-sm font-bold"
+          >
+            Close
+          </button>
+        </div>
+
+        <p class="mb-4 text-sm text-black/65">You can make a request online or by phone.</p>
+
+        <form class="space-y-4" id="reservation-form" onsubmit="handleReservationSubmit(event)">
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Name</label>
+              <input
+                name="name"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="res-name-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Phone</label>
+              <input
+                name="phone"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="res-phone-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Date</label>
+              <input
+                type="date"
+                name="date"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="res-date-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Time</label>
+              <input
+                type="time"
+                name="time"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="res-time-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Guests</label>
+              <input
+                type="number"
+                min="1"
+                name="guests"
+                value="2"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="res-guests-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Occasion</label>
+              <select
+                name="occasion"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              >
+                <option>Dinner</option>
+                <option>Birthday</option>
+                <option>Date Night</option>
+                <option>Group Dinner</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-semibold">Message</label>
+            <textarea
+              rows="4"
+              name="message"
+              class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+            ></textarea>
+          </div>
+          <div class="rounded-2xl bg-green-100 px-4 py-3 text-sm text-green-800 hidden" id="res-success"></div>
+          <div class="flex flex-wrap gap-3">
+            <button type="submit" class="rounded-full bg-black px-6 py-3 font-bold text-white">
+              Send Reservation Request
+            </button>
+            <a href="tel:+33752030407" class="rounded-full border border-black/10 px-6 py-3 font-bold">
+              Call Instead
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="fixed inset-0 z-[60] hidden grid place-items-center bg-black/70 px-4 py-6 backdrop-blur-sm">
+      <div class="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-[2rem] bg-[#f5f1e7] p-6 text-black shadow-2xl md:p-8">
+        <div class="mb-5 flex items-center justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-[0.28em] text-black/45">Groups & Private Events</div>
+            <h3 class="mt-1 text-3xl font-black">Quote & Booking</h3>
+          </div>
+          <button
+            onclick="closeModals()"
+            class="rounded-full bg-black/10 px-4 py-2 text-sm font-bold"
+          >
+            Close
+          </button>
+        </div>
+
+        <p class="mb-4 text-sm text-black/65">Tell the team about your project or request a personalized quote.</p>
+
+        <form class="space-y-4" id="event-form" onsubmit="handleEventSubmit(event)">
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Name</label>
+              <input
+                name="name"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="evt-name-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Phone</label>
+              <input
+                name="phone"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="evt-phone-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Event type</label>
+              <input
+                name="type"
+                placeholder="Birthday, cocktail party, business meeting"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="evt-type-error"></p>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm font-semibold">Guests</label>
+              <input
+                type="number"
+                min="1"
+                name="guests"
+                value="20"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+              <p class="mt-1 text-sm text-red-600 hidden" id="evt-guests-error"></p>
+            </div>
+            <div class="md:col-span-2">
+              <label class="mb-1 block text-sm font-semibold">Preferred date</label>
+              <input
+                type="date"
+                name="date"
+                class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-semibold">Details</label>
+            <textarea
+              rows="4"
+              name="message"
+              class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 outline-none"
+            ></textarea>
+          </div>
+          <div class="rounded-2xl bg-green-100 px-4 py-3 text-sm text-green-800 hidden" id="evt-success"></div>
+          <div class="flex flex-wrap gap-3">
+            <button type="submit" class="rounded-full bg-black px-6 py-3 font-bold text-white">
+              Send Event Request
+            </button>
+            <a href="tel:+33752030407" class="rounded-full border border-black/10 px-6 py-3 font-bold">
+              Call Restaurant
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Menu data
+    const menuItems = [
+      {
+        id: 1,
+        name: "Jollof Rice",
+        category: "Mains",
+        dietary: ["Halal"],
+        price: 14,
+        image: "smart1.webp",
+        description: "Smoky West African rice with grilled chicken and house spice blend.",
+        popular: true,
+      },
+      {
+        id: 2,
+        name: "Chicken Yassa",
+        category: "Mains",
+        dietary: ["Halal", "Gluten-free"],
+        price: 16,
+        image: "smart5.webp",
+        description: "Tender chicken in citrus onion sauce served with fragrant rice.",
+        popular: true,
+      },
+      {
+        id: 3,
+        name: "Grilled Brochettes",
+        category: "Grill",
+        dietary: ["Halal"],
+        price: 18,
+        image: "smart4.webp",
+        description: "African grilled skewers with plantain and signature sauce.",
+        popular: true,
+      },
+      {
+        id: 4,
+        name: "Accras",
+        category: "Starters",
+        dietary: ["Vegetarian"],
+        price: 8,
+        image: "smart1.webp",
+        description: "Golden fritters served hot with a fresh dipping sauce.",
+        popular: false,
+      },
+      {
+        id: 5,
+        name: "Fried Plantain",
+        category: "Sides",
+        dietary: ["Vegetarian", "Gluten-free", "Lactose-free"],
+        price: 6,
+        image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=1200&q=80",
+        description: "Sweet fried plantain with crisp edges and soft center.",
+        popular: false,
+      },
+      {
+        id: 6,
+        name: "House Cocktail",
+        category: "Drinks",
+        dietary: [],
+        price: 9,
+        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+        description: "Fresh, vibrant and perfect for late nights at Smart Gorilla.",
+        popular: false,
+      },
+    ];
+
+    // State
+    let activeCategory = 'Popular';
+    let activeDiet = 'All';
+    let favorites = [];
+
+    // Scroll to ID
+    function scrollToId(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Category filter
+    function setCategory(category) {
+      activeCategory = category;
+      
+      // Update button styles
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        if (btn.dataset.category === category) {
+          btn.className = 'category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-white text-black';
+        } else {
+          btn.className = 'category-btn whitespace-nowrap rounded-full px-5 py-3 text-sm font-bold transition bg-[#c6d5a0] text-black/45';
+        }
+      });
+      
+      renderMenu();
+    }
+
+    // Diet filter
+    function setDiet(diet) {
+      activeDiet = diet;
+      
+      // Update button styles
+      document.querySelectorAll('.diet-btn').forEach(btn => {
+        if (btn.dataset.diet === diet) {
+          btn.className = 'diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-black text-white';
+        } else {
+          btn.className = 'diet-btn whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] bg-white/10 text-white/80';
+        }
+      });
+      
+      renderMenu();
+    }
+
+    // Toggle favorite
+    function toggleFavorite(id) {
+      if (favorites.includes(id)) {
+        favorites = favorites.filter(fav => fav !== id);
+      } else {
+        favorites.push(id);
+      }
+      renderMenu();
+    }
+
+    // Render menu
+    function renderMenu() {
+      let filteredItems = [...menuItems];
+      
+      // Filter by category
+      if (activeCategory === 'Popular') {
+        filteredItems = filteredItems.filter(item => item.popular);
+      } else {
+        filteredItems = filteredItems.filter(item => item.category === activeCategory);
+      }
+      
+      // Filter by diet
+      if (activeDiet !== 'All') {
+        filteredItems = filteredItems.filter(item => item.dietary.includes(activeDiet));
+      }
+      
+      const container = document.getElementById('menu-items');
+      container.innerHTML = filteredItems.map(dish => `
+        <article class="rounded-[2rem] bg-[#f5f1e7] p-5 text-black shadow-2xl shadow-black/15">
+          <img src="${dish.image}" alt="${dish.name}" class="h-56 w-full rounded-[1.5rem] object-cover" />
+          <div class="mt-5 flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-2xl font-black leading-tight">${dish.name}</h3>
+              <p class="mt-2 text-sm leading-6 text-black/65">${dish.description}</p>
+            </div>
+            <button
+              onclick="toggleFavorite(${dish.id})"
+              class="rounded-full bg-black/10 px-4 py-3 text-xl"
+              aria-label="Favorite ${dish.name}"
+            >
+              ${favorites.includes(dish.id) ? '♥' : '♡'}
+            </button>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            ${dish.dietary.map(tag => `
+              <span class="rounded-full bg-black/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em]">
+                ${tag}
+              </span>
+            `).join('')}
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div class="text-3xl font-black">€${dish.price}</div>
+            <button class="rounded-full bg-black px-5 py-3 text-sm font-bold text-white">
+              Add
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Show modals
+    function showReservationModal() {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      document.getElementById('reservation-modal').classList.add('grid');
+    }
+
+    function showEventModal() {
+      document.getElementById('event-modal').classList.remove('hidden');
+      document.getElementById('event-modal').classList.add('grid');
+    }
+
+    function closeModals() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('reservation-modal').classList.remove('grid');
+      document.getElementById('event-modal').classList.add('hidden');
+      document.getElementById('event-modal').classList.remove('grid');
+    }
+
+    // Form validation
+    function validateReservation(formData) {
+      const errors = {};
+      if (!formData.get('name').trim()) errors.name = 'Name is required';
+      if (!formData.get('phone').trim()) errors.phone = 'Phone is required';
+      if (!formData.get('date')) errors.date = 'Date is required';
+      if (!formData.get('time')) errors.time = 'Time is required';
+      if (!formData.get('guests') || Number(formData.get('guests')) < 1) errors.guests = 'Guests must be at least 1';
+      return errors;
+    }
+
+    function validateEvent(formData) {
+      const errors = {};
+      if (!formData.get('name').trim()) errors.name = 'Name is required';
+      if (!formData.get('phone').trim()) errors.phone = 'Phone is required';
+      if (!formData.get('type').trim()) errors.type = 'Event type is required';
+      if (!formData.get('guests') || Number(formData.get('guests')) < 1) errors.guests = 'Guests must be at least 1';
+      return errors;
+    }
+
+    // Handle form submissions
+    function handleReservationSubmit(event) {
+      event.preventDefault();
+      
+      // Hide all errors
+      ['name', 'phone', 'date', 'time', 'guests'].forEach(field => {
+        const errorEl = document.getElementById(`res-${field}-error`);
+        errorEl.classList.add('hidden');
+        errorEl.textContent = '';
+      });
+      document.getElementById('res-success').classList.add('hidden');
+      
+      const formData = new FormData(event.target);
+      const errors = validateReservation(formData);
+      
+      if (Object.keys(errors).length > 0) {
+        Object.keys(errors).forEach(field => {
+          const errorEl = document.getElementById(`res-${field}-error`);
+          errorEl.textContent = errors[field];
+          errorEl.classList.remove('hidden');
+        });
+        return;
+      }
+      
+      const successEl = document.getElementById('res-success');
+      successEl.textContent = 'Reservation request ready. Connect this form to email or backend to receive bookings.';
+      successEl.classList.remove('hidden');
+    }
+
+    function handleEventSubmit(event) {
+      event.preventDefault();
+      
+      // Hide all errors
+      ['name', 'phone', 'type', 'guests'].forEach(field => {
+        const errorEl = document.getElementById(`evt-${field}-error`);
+        errorEl.classList.add('hidden');
+        errorEl.textContent = '';
+      });
+      document.getElementById('evt-success').classList.add('hidden');
+      
+      const formData = new FormData(event.target);
+      const errors = validateEvent(formData);
+      
+      if (Object.keys(errors).length > 0) {
+        Object.keys(errors).forEach(field => {
+          const errorEl = document.getElementById(`evt-${field}-error`);
+          errorEl.textContent = errors[field];
+          errorEl.classList.remove('hidden');
+        });
+        return;
+      }
+      
+      const successEl = document.getElementById('evt-success');
+      successEl.textContent = 'Event inquiry ready. Connect this form to email or backend to receive requests.';
+      successEl.classList.remove('hidden');
+    }
+
+    // Initial render
+    renderMenu();
+  </script>
+</body>
+</html>
